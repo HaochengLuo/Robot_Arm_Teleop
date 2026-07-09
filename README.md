@@ -11,7 +11,7 @@ The mechanical design, 3D printed parts, and original Arduino-style control conc
 
 Please refer to the original Printables project page for the 3D printable files, assembly details, and the license/usage terms for the mechanical design.
 
----
+
 
 ## Features
 
@@ -22,7 +22,7 @@ Please refer to the original Printables project page for the 3D printable files,
 - Staggered servo startup to reduce current spikes
 - Push-button gripper control
 
----
+
 
 ## Hardware
 
@@ -33,7 +33,7 @@ Please refer to the original Printables project page for the 3D printable files,
 - 1 push button
 - External 5-6V servo power supply
 
----
+
 
 ## Default Wiring
 
@@ -56,7 +56,7 @@ Connect potentiometers to `3.3V`, `GND`, and the matching ADC pin. Do not feed 5
 
 For the PCA9685, connect `VCC` to ESP32 `3.3V`, `SDA` to GPIO 21, `SCL` to GPIO 22, and `GND` to ESP32 ground. Power the servos through the PCA9685 `V+` terminal using a separate 5-6V supply, and make sure the ESP32, PCA9685, and servo power supply share a common ground.
 
----
+
 
 ## Arduino Setup
 
@@ -67,7 +67,7 @@ Install these in Arduino IDE:
 
 Open `Robot_Arm_Teleop.ino`, select your ESP32 board, then upload.
 
----
+
 
 ## Tuning
 
@@ -93,7 +93,7 @@ The fields are:
 
 The default ADC calibration preserves the reversed mapping from the original Arduino Uno sketch. If your potentiometers use most of the ESP32 ADC range, try values closer to `3900` and `200`.
 
----
+
 
 ## BOM
 
@@ -112,13 +112,13 @@ The default ADC calibration preserves the reversed mapping from the original Ard
 | Optional | Power switch | Useful for safely disconnecting servo power. |
 | Optional | Capacitor, 470-1000 uF | Can be placed across servo power input on the PCA9685 to reduce voltage dips. |
 
----
+
 
 ## Safety
 
 Start with conservative angle limits before testing the full mechanical range. Move one joint at a time, keep the arm unloaded during first tests, and use an external servo power supply instead of powering servos from the ESP32.
 
----
+
 
 ## License
 
